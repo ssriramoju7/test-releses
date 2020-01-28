@@ -19,7 +19,9 @@
 		 <sonar.language>mule4</sonar.language> 
 		 <sonar.sources>src/main/mule</sonar.sources>
 	</properties>
-
+    <scm>
+        <connection>scm:git:git@github-ld:ssriramoju7/test-releses.git</connection>
+    </scm>
 
 
 	<build>
