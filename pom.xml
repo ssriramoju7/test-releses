@@ -19,7 +19,7 @@
 		 <sonar.sources>src/main/mule</sonar.sources>
 	</properties>
     <scm>
-        <connection>scm:git:git@github-ld:ssriramoju7/test-releses.git</connection>
+        <connection>scm:git:git@github.com:ssriramoju7/test-releses.git</connection>
       <tag>sonar-cube-test-1.0.0</tag>
   </scm>
 
