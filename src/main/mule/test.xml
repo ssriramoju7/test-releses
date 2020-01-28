@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="fd5aa248-172c-4c56-8425-e75c60b0178f" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="sonar-cube-testFlow" doc:id="fbaf3ef7-a628-43ca-b17d-a567686b342a" >
+		<http:listener doc:name="Listener" doc:id="b02e4b27-73ac-4545-98d6-55e339232152" config-ref="HTTP_Listener_config" path="/testApp"/>
+		<logger level="INFO" doc:name="Logger" doc:id="bceb7a18-e947-441f-8f99-505e39dcd7a4" message="updated"/>
+		<ee:transform doc:name="Transform Message" doc:id="09c4a1f8-30e3-4097-867d-864382a6af70" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	message : "success"
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="86beb4c3-377b-4ca1-827f-6c055f741c2b" message="updated" />
+		<logger level="INFO" doc:name="Logger" doc:id="4f4594cb-81ad-44a0-95a8-eb4b4ef41abf" message="updated" />
+	</flow>
+	<sub-flow name="testSub_Flow" doc:id="c1d8ec70-c341-42bd-81c6-e5ba24eaf75a" >
+		<logger level="INFO" doc:name="Logger" doc:id="897cbd46-3cc7-42db-a028-862d0c491f27" message="test"/>
+	</sub-flow>
+	<sub-flow name="testSub_Flow1" doc:id="0e838561-3f85-4bd6-bfda-a333a11f99db" >
+		<logger level="INFO" doc:name="Logger" doc:id="51b34c35-0235-4aa8-97f9-84a08fa53bca" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow2" doc:id="bd400e20-25f9-411e-b9ec-621c1e3f80da" >
+		<logger level="INFO" doc:name="Logger" doc:id="6a27a3d3-0390-434b-aa24-7b921014c6de" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow3" doc:id="4ebaa2f2-757c-4469-9f32-e3090076b10c" >
+		<logger level="INFO" doc:name="Logger" doc:id="30b554d8-eac3-408c-98c7-0e2ed52f8291" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow4" doc:id="83d3137e-6573-44d4-8281-4821fc262221" >
+		<logger level="INFO" doc:name="Logger" doc:id="54236b28-edea-4e0b-8b8b-828f5780d976" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow5" doc:id="3c1734e7-6ccb-472d-b8dd-b999cf42f6ae" >
+		<logger level="INFO" doc:name="Logger" doc:id="e6c6787f-4201-4ffd-a7f8-c68fb5a2975b" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow6" doc:id="00ec9d3a-941a-47b5-a262-289f74a780c0" >
+		<logger level="INFO" doc:name="Logger" doc:id="5d56516d-b0e6-4c5a-ac34-36188ab8934b" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow7" doc:id="1741847f-0264-4d93-8a0c-40b574b8eaff" >
+		<logger level="INFO" doc:name="Logger" doc:id="fdda2a39-a632-4d47-9e5f-3eb1f6570d77" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow8" doc:id="efe82cea-965e-49a8-8240-d2c3e6355326" >
+		<logger level="INFO" doc:name="Logger" doc:id="c59b3388-77e4-4f12-97d2-3dd99a4addf1" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow9" doc:id="9897f2d9-6788-4a84-a503-1fb4818c5803" >
+		<logger level="INFO" doc:name="Logger" doc:id="5e62598a-9dd2-44e3-a99e-ab36fcf2f099" message="test"/>
+	</sub-flow><sub-flow name="testSub_Flow10" doc:id="6dabe848-8263-4006-a452-977a6f036c5e" >
+		<logger level="INFO" doc:name="Logger" doc:id="e95b7eed-9359-447a-8ca2-7fd5aed4f0b8" message="test"/>
+	</sub-flow>
+<sub-flow name="testSub_Flow11" doc:id="8562cda7-5860-4680-b300-32ad52df5d13" >
+		<logger level="INFO" doc:name="Logger" doc:id="43a98962-964d-422f-a91b-eb3ed7e4c8e8" message="test"/>
+	</sub-flow>
+</mule>
