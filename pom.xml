@@ -4,7 +4,7 @@
 
     <groupId>com.mycompany</groupId>
     <artifactId>sonar-cube-test</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>mule-application</packaging>
 
     <name>sonar-cube-test</name>
@@ -20,7 +20,7 @@
     </properties>
     <scm>
         <connection>scm:git:git@github.com:ssriramoju7/test-releses.git</connection>
-      <tag>sonar-cube-test-1.0.3</tag>
+      <tag>HEAD</tag>
   </scm>
 
 
